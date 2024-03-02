@@ -759,7 +759,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "13.6"
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -771,7 +771,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk"
+			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1176,42 +1176,6 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/local/share/doc/SFML"
-		},
-		{
-			"name" : "inSurf_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/evanmason/CLionProjects/inSurf/cmake-build-debug"
-		},
-		{
-			"name" : "inSurf_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "inSurf_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/evanmason/CLionProjects/inSurf"
 		}
 	],
 	"kind" : "cache",

@@ -133,11 +133,11 @@ CMAKE_OSX_ARCHITECTURES:STRING=
 
 //Minimum OS X version to target for deployment (at runtime); newer
 // APIs weak linked. Set to empty string for default value.
-CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
+CMAKE_OSX_DEPLOYMENT_TARGET:STRING=13.6
 
 //The product will be built against the headers and libraries located
 // inside the indicated SDK.
-CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -227,15 +227,6 @@ SFML_DIR:PATH=/Library/Frameworks/SFML.framework/Resources/CMake
 
 //Path to a file.
 SFML_DOC_DIR:PATH=/usr/local/share/doc/SFML
-
-//Value Computed by CMake
-inSurf_BINARY_DIR:STATIC=/Users/evanmason/CLionProjects/inSurf/cmake-build-debug
-
-//Value Computed by CMake
-inSurf_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-inSurf_SOURCE_DIR:STATIC=/Users/evanmason/CLionProjects/inSurf
 
 
 ########################

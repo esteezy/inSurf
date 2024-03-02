@@ -5,6 +5,6 @@
 #ifndef INSURF_INSURF_H
 #define INSURF_INSURF_H
 
-void generateWindow();
+
 
 #endif //INSURF_INSURF_H
