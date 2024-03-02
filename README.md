@@ -1,2 +1,2 @@
 # inSurf
-2D Surf Game
+Arcade-based 2D Surf Game
