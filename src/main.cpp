@@ -4,25 +4,55 @@
 
 #include "InSurf.h"
 #include <iostream>
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-    sf::Window window(sf::VideoMode(800, 600), "My window");
-
-    // Display the list of all the video modes available for fullscreen
-    std::vector<sf::VideoMode> modes = sf::VideoMode::getFullscreenModes();
-    for (std::size_t i = 0; i < modes.size(); ++i)
-    {
-        sf::VideoMode mode = modes[i];
-        std::cout << "Mode #" << i << ": "
-                  << mode.width << "x" << mode.height << " - "
-                  << mode.bitsPerPixel << " bpp" << std::endl;
+    //create win
+    sf::RenderWindow window(sf::VideoMode(800, 650), "InSurf");
+    window.setFramerateLimit(60);
+    //load sprite (surfer)
+    sf::Texture surfer;
+    if(!surfer.loadFromFile("../assets/SurferSprite.png")){
+        return EXIT_FAILURE;
     }
+    sf::Sprite sprite;
+    sprite.setTexture(surfer);
+    sprite.setTextureRect(sf::IntRect(0.0f,0.0f,32.0f,32.0f));
+    sprite.setPosition(400.0f, 325.0f);
 
-// Create a window with the same pixel depth as the desktop
-    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-    window.create(sf::VideoMode(1024, 768, desktop.bitsPerPixel), "SFML window");
+    //game loop
+    while(window.isOpen()){
+        sf::Event event;
+        while(window.pollEvent(event)){
+            if (event.type == sf::Event::Closed){ window.close(); }
+        }
 
-    return 0;
+        if(sf::Keyboard::isKeyPressed((sf::Keyboard::Left))){
+            sprite.setTextureRect(sf::IntRect(0.0f,0.0f,32.0f,32.0f));
+            sprite.move(-2.5f, 0.0f);
+        }
+        if(sf::Keyboard::isKeyPressed((sf::Keyboard::Right))){
+            sprite.setTextureRect(sf::IntRect(0.0f,0.0f,32.0f,32.0f));
+            sprite.move(2.5f, 0.0f);
+        }
+        if(sf::Keyboard::isKeyPressed((sf::Keyboard::Up))){
+            sprite.setTextureRect(sf::IntRect(32.0f,0.0f,32.0f,32.0f));
+            sprite.move(0.0f, -2.5f);
+        }
+        if(sf::Keyboard::isKeyPressed((sf::Keyboard::Down))){
+            sprite.setTextureRect(sf::IntRect(64.0f,0.0f,32.0f,32.0f));
+            sprite.move(0.0f, 2.5f);
+        }
+
+        //clr screen
+        window.clear();
+
+        //draw surfer
+        window.draw(sprite);
+
+        //update window
+        window.display();
+    }
+    return EXIT_SUCCESS;
 }
