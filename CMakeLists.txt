@@ -1,18 +1,14 @@
 cmake_minimum_required(VERSION 3.14)
-project(HelloSFML)
+project(inSurf)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
-set(SOURCE_FILES ./src/main.cpp)
+include_directories(src/)
 
-add_executable(
-        inSurf
-       ./src/InSurf.cpp
-       ./src/InSurf.h
-       ./src/main.cpp
-       ./src/GameSupport.cpp
-       ./src/GameSupport.h
-       ./src/GameSupport.h
+add_executable(inSurf
+        src/InSurf.h
+        src/InSurf.cpp
+        src/main.cpp
 )
 include_directories(/usr/local/include)
 

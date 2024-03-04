@@ -146,7 +146,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=HelloSFML
+CMAKE_PROJECT_NAME:STATIC=inSurf
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -227,6 +227,15 @@ SFML_DIR:PATH=/Library/Frameworks/SFML.framework/Resources/CMake
 
 //Path to a file.
 SFML_DOC_DIR:PATH=/usr/local/share/doc/SFML
+
+//Value Computed by CMake
+inSurf_BINARY_DIR:STATIC=/Users/evanmason/CLionProjects/inSurf/cmake-build-debug
+
+//Value Computed by CMake
+inSurf_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+inSurf_SOURCE_DIR:STATIC=/Users/evanmason/CLionProjects/inSurf
 
 
 ########################
