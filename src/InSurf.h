@@ -11,12 +11,19 @@ public:
     Game();
     void run();
 private:
-    sf::RenderWindow window;
-    sf::Sprite surfer;
-    sf::Texture surfer_texture;
+    sf::RenderWindow _window;
+    sf::Sprite _surfer;
+    sf::Texture _tilesheet;
+
+    bool _upEvent {false}, _downEvent {false}, _leftEvent {false}, _rightEvent {false};
+    const float PlayerSpeed {100.0f};
+    const sf::Time TimePerFrame = sf::seconds(1.f/60.0f);
+
     void processEvents();
-    void update();
+    void update(sf::Time deltaTime);
     void render();
+
+    void handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 };
 
 #endif //INSURF_INSURF_H
