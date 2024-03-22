@@ -15,7 +15,7 @@ Game::Game() :  _window(sf::VideoMode(650, 500), "InSurf!"),
                 _background()
                 {
     //load texture (surfer)
-    if(!_tilesheet.loadFromFile("../assets/SurferSprite.png")){
+    if(!_tilesheet.loadFromFile("../assets/newsurf.png")){
         std::cout << "Error 1: Failed to load texture";
         exit(1);
     }
@@ -72,10 +72,13 @@ void Game::processEvents() {
 //game logic
 void Game::update(sf::Time deltaTime) {
     sf::Vector2f movement(0.0f, 0.0f);
-    if (_upEvent) { movement.y -= PlayerSpeed; }
+    if (_upEvent) { movement.y -= PlayerSpeed; _surfer.setTextureRect(sf::IntRect(32.0f,0.0f,32.0f,32.0f));
+    }
     if (_downEvent) { movement.y += PlayerSpeed; }
     if (_leftEvent) { movement.x -= PlayerSpeed; }
     if (_rightEvent) { movement.x += PlayerSpeed; }
+    //else _surfer.setTextureRect(sf::IntRect(0.0f,0.0f,32.0f,32.0f));
+
 
     _surfer.move(movement * deltaTime.asSeconds());
 }
