@@ -6,21 +6,31 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-/*      Prototypes      */
-
-
 
 //Def Constructor - member initialized
-Game::Game() : _window(sf::VideoMode(650, 500), "InSurf!"),_surfer(),_tilesheet(){
+Game::Game() :  _window(sf::VideoMode(650, 500), "InSurf!"),
+                _surfer(),
+                _tilesheet(),
+                _tileset(),
+                _background()
+                {
     //load texture (surfer)
     if(!_tilesheet.loadFromFile("../assets/SurferSprite.png")){
         std::cout << "Error 1: Failed to load texture";
         exit(1);
     }
+    if(!_tileset.loadFromFile("../assets/beach.png")){
+        std::cout << "Error 1: Failed to load texture";
+        exit(1);
+    }
+    _background.setTexture(_tileset);
+    _background.setTextureRect(sf::IntRect (0.0f,0.0f,650.0f,500.0f));
+    _background.setPosition(0.f,0.f);
     //assign text to sprite; config defaults
     _surfer.setTexture(_tilesheet);
     _surfer.setTextureRect(sf::IntRect(0.0f,0.0f,32.0f,32.0f));
     _surfer.setPosition(325.0f, 250.0f);
+
 }
 
 //Master game loop
@@ -73,6 +83,7 @@ void Game::update(sf::Time deltaTime) {
 //clear->draw->display
 void Game::render() {
     _window.clear();
+    _window.draw(_background);
     _window.draw(_surfer);
     _window.display();
 }

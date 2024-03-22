@@ -14,6 +14,8 @@ private:
     sf::RenderWindow _window;
     sf::Sprite _surfer;
     sf::Texture _tilesheet;
+    sf::Texture _tileset;
+    sf::Sprite _background;
 
     bool _upEvent {false}, _downEvent {false}, _leftEvent {false}, _rightEvent {false};
     const float PlayerSpeed {100.0f};
